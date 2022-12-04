@@ -1,0 +1,20 @@
+.FooterContainer {
+    background-color: #333338;
+    color: white;
+    width: 80%;
+    margin: auto;
+    padding-top: 4.5%;
+    padding-bottom: 2%;
+}
+
+.wrapper {
+    background-color: #333338;
+    width: 100%;
+
+
+}
+
+.CopyRight{
+    margin-top: 15px;
+    text-align: center;
+}
