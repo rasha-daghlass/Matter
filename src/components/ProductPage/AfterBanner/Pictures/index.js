@@ -25,11 +25,11 @@ const Pictures = () => {
         <div >
        
           <Container>
-          <Row>
-            {Data.map((item)=>(
-              <Col className={styles.wrapper}>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={item.imgSrc} />
+          <Row className={styles.mainContainer}>
+            {Data.map((item ,id)=>(
+              <Col  key={id} className={styles.wrapper}>
+              <Card className={styles.card} style={{ width: "18rem" }}>
+                <Card.Img className={styles.cardd} variant="top" src={item.imgSrc} />
                 <Card.Body>
                   <Card.Title className={styles.title}>{item.title}</Card.Title>
                 </Card.Body>
@@ -37,9 +37,6 @@ const Pictures = () => {
                 </Col>
 
             ))}
-            
-            
-         
         </Row>
         </Container>
     

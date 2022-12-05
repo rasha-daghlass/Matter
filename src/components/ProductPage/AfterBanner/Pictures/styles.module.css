@@ -1,12 +1,17 @@
-
-.out{
-    border: 2px solid green;
-    
-}
-.wrapper {
+.mainContainer{
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  margin: auto;
+  padding-left: 0px;
+
+}
+.wrapper{
+  width: 100%;
+  margin: auto;
+
+}
+
+.card{
+  border: none;
 }
 .img{
     width: 40%;
