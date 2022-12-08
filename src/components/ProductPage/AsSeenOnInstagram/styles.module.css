@@ -2,3 +2,12 @@
     margin-bottom: 5%;
 }
 
+@media only screen and(max-width:580px) {
+    .wrapper, .card{
+        border: 1px solid red;
+        background-color: red   ;
+    }
+
+
+    
+}

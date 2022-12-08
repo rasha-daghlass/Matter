@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import HomePage from "./views/HomePage";
 import LoginPage from "./views/LoginPage";
 import NotFound from "./views/NotFound";
+import ProductList from "./views/ProductList";
 import ProductPage from "./views/ProductPage";
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
           <Route index element={<HomePage />} />
           <Route path="/Login" element={<LoginPage/>} />
           <Route path="/ProductPage" element={<ProductPage/>} />
+          <Route path="ProductList" element={<ProductList/>}/>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

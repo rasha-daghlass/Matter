@@ -26,11 +26,13 @@ const AsSeenOnInstagram = () => {
     <div>
       <TitleComponent title="As Seen On Instagram" />
       <Container className={styles.mainContainer}>
-          <Row >
+          <Row  className={styles.row}>
             {Data.map((item , id)=>(
-              <Col xl="3" lg="3" md="6" sm="6" key={id} className={styles.wrapper}>
+              <Col xl="3" lg="3" md="6" sm="6" key={id} >
               <Card className={styles.card} style={{ width: "16rem" }}>
-                <Card.Img variant="top" src={item.imgSrc} />
+                <div className={styles.wrapper}>
+                <Card.Img  variant="top" src={item.imgSrc} />
+                </div>
               </Card>
                 </Col>
 
