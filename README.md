@@ -9,6 +9,6 @@ in order to download required library localy that already downloaded in pakage j
 to run App in your browser .
 
 # moving  between pages (using React Router) 
-/Login
-/ProductPage
-/ProductList
+# /Login
+# /ProductPage
+# /ProductList
