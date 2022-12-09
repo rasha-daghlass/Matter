@@ -1,0 +1,28 @@
+.container {
+  background-color: #ffffff;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.leftSide {
+  width: 25%;
+}
+.firstRow {
+  display: flex;
+  justify-content: space-between;
+}
+.rightSide {
+  width: 75%;
+}
+.button {
+  background-color: #ffffff;
+}
+.loading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.loadingText {
+  color: black;
+  background-color: #ffffff;
+}
