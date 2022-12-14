@@ -9,6 +9,7 @@ import TextParagraph2 from "../components/ProductPage/TextParagraph2";
 const ProductPage = () => {
   return (
     <div>
+      {/* <ProductModal/> */}
       <Banner />
       <AfterBanner />
       <TextParagraph2 />

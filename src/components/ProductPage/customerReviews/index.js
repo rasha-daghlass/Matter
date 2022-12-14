@@ -1,54 +1,37 @@
 import React from "react";
 import TitleComponent from "../../TitleComponent";
 import TextParagraph from "../TextParagraph";
-import { Rating } from "react-simple-star-rating";
 import styles from "./style.module.css";
-import SharedButton from "../../SharedButton";
-import { useState } from "react";
+import Rating from "./Rating";
 
 const Customer = () => {
-  const [rating, setRating] = useState(0);
-
-  const handleRating = (rate) => {
-    setRating(rate);
-  };
-
-  const onPointerEnter = () => console.log("Enter");
-  const onPointerLeave = () => console.log("Leave");
-  const onPointerMove = (value, index) => console.log(value, index);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <TitleComponent title="Customer Reviews" />
         </div>
+        {/* content */}
         <div className={styles.firstRow}>
-          <div className={styles.rating}>
-            <Rating
-              onClick={handleRating}
-              onPointerEnter={onPointerEnter}
-              onPointerLeave={onPointerLeave}
-              onPointerMove={onPointerMove}
-            />
-            <p className={styles.p}>text of 5 </p>
+          <div className={styles.rateSide}>
+            <Rating/>            
+            <p className={styles.rateText}>rate of 5</p>
           </div>
+          <div className={styles.rightSide}> 
+          <div className={styles.share}>Share your thoughts with other customers</div>
+          <div >
+            <button className={styles.review2}>write review</button>
+          </div>
+          </div>
+         
 
-          <div className={styles.share}>
-            Share your thoughts with other customers
-          </div>
-          <div className={styles.review}>
-            <SharedButton buttonLabel="write review"/>
-          </div>
+        
+         
         </div>
         <p>Top Customers Reviews</p>
-        <div className={styles.rating}>
-            <Rating
-              onClick={handleRating}
-              onPointerEnter={onPointerEnter}
-              onPointerLeave={onPointerLeave}
-              onPointerMove={onPointerMove}
-            />
-            <p className={styles.p}>text of 5 </p>
+        <div className={styles.rateSide}>
+            <Rating/>            
+            <p className={styles.rateText}>rate of 5</p>
           </div>
           <p>By Customer Name on February 18, 2017</p>
 

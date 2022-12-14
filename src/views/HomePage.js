@@ -5,6 +5,7 @@ import Carousels from "../components/HomePage/Carousels";
 import Explore from "../components/HomePage/Explore";
 import Featured from "../components/HomePage/Featured";
 import RecommendedVideos from "../components/HomePage/Recommended Videos";
+import Shop from "../components/HomePage/Shop";
 
 const HomePage = () => {
   return (
@@ -12,7 +13,8 @@ const HomePage = () => {
       <Carousels />
       <Featured />
       <AboutMatter />
-      <Explore/>
+      <Explore />
+      <Shop/>
       <RecommendedVideos />
       <AsSeenOn />
     </>

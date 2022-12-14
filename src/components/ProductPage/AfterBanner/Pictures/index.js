@@ -23,22 +23,31 @@ const Pictures = () => {
   ]
   return (
         <div >
-       
-          <Container>
-          <Row className={styles.mainContainer}>
-            {Data.map((item ,id)=>(
-              <Col  key={id} className={styles.wrapper}>
-              <Card className={styles.card} style={{ width: "18rem" }}>
-                <Card.Img className={styles.cardd} variant="top" src={item.imgSrc} />
-                <Card.Body>
-                  <Card.Title className={styles.title}>{item.title}</Card.Title>
-                </Card.Body>
-              </Card>
-                </Col>
-
-            ))}
+          <Container className={styles.RecVideosContainer}>
+          <Row>
+          {Data.map((item) => {
+            return (
+              <Col
+                xl="4"
+                lg="4"
+                md="4"
+                sm="4"
+                xs="4"
+                key={item.id}
+                className={styles.item}
+              >
+                <img
+                  className={styles.videoImg}
+                  src={item.imgSrc}
+                  alt={item.title}
+                />
+                <p className={styles.caption}>{item.title}</p>
+              </Col>
+            );
+          })}
         </Row>
-        </Container>
+          
+          </Container>
     
           </div>
         
