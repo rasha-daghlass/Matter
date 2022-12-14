@@ -8,8 +8,11 @@ import MiddleSection from "./MiddleSection";
 import React from "react";
 import IconsSection from "./IconsSection";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import UserProfile from "../../../HomePage/USERPROFILE";
 
 function LightNavBar() {
+  const [cookie,setCookie]=useCookies({})
   return (
     <>
       <Navbar expand="lg" className={styles.LightNavBar}>
@@ -21,9 +24,13 @@ function LightNavBar() {
             <hr className={styles.navBarHr} />
             <MiddleSection />
             <Nav>
-              <Link to="/Login" className={styles.loginLink}>
+            {"token" in cookie ? <UserProfile/>:<Link to="/Login" className={styles.loginLink}>
                 LOGIN
               </Link>
+      }
+              {/* <Link to="/Login" className={styles.loginLink}>
+                LOGIN
+              </Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

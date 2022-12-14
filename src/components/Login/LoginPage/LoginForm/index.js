@@ -4,8 +4,12 @@ import { RxEyeClosed } from "react-icons/rx";
 import axios from "axios";
 import styles from "./styles.module.css";
 import { useCookies } from "react-cookie";
+import { Navigate, useNavigate } from "react-router-dom";
+import UserProfile from "../../../HomePage/USERPROFILE";
+
+
 const LoginForm = () => {
-  const [loginForm, setLoginForm] = useState({}); 
+  const [loginForm, setLoginForm] = useState({});
   const [cookie, setCookie] = useCookies();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
@@ -16,18 +20,25 @@ const LoginForm = () => {
   };
 
   const handlePassword = (e) => {
-    
     setLoginForm({ ...loginForm, password: e.target.value });
-  
   };
-  const handleLogin = async(e) => {
+  const handleLogin = async (e) => {
     console.log(loginForm);
-      const Data=await axios.post(
-      "https://fakestoreapi.com/auth/login",
+    const {
+      data: {
+        data: { Token, Name },
+      },
+    } = await axios.post(
+      "http://restapi.adequateshop.com/api/authaccount/login",
       loginForm
     );
-    console.log(Data)
+    console.log(Token, Name);
+    setCookie("token", Token)
+    setCookie("name", Name);
+    (navigate ('/'))
+
   };
+  const navigate=useNavigate();
   return (
     <div>
       <div className={styles.formFiled}>
@@ -53,9 +64,14 @@ const LoginForm = () => {
         </button>
       </div>
       <div className={styles.formFiled}>
-        <button className={styles.LoginButton} onClick={handleLogin}>
+      {/* {"token" in cookie ? <UserProfile/>:
+      <button className={styles.LoginButton} onClick={handleLogin}>
           LOG IN
-        </button>
+        </button> } */}
+         <button className={styles.LoginButton} onClick={handleLogin}>
+          LOG IN
+        </button> 
+
       </div>
     </div>
   );

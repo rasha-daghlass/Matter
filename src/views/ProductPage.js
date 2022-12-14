@@ -3,7 +3,7 @@ import AfterBanner from "../components/ProductPage/AfterBanner";
 import AlsoLike from "../components/ProductPage/AlsoLike";
 import AsSeenOnInstagram from "../components/ProductPage/AsSeenOnInstagram";
 import Banner from "../components/ProductPage/Banner";
-import Customer from "../components/ProductPage/customerReviews";
+// import Customer from "../components/ProductPage/customerReviews";
 import TextParagraph2 from "../components/ProductPage/TextParagraph2";
 
 const ProductPage = () => {
@@ -14,7 +14,7 @@ const ProductPage = () => {
       <AfterBanner />
       <TextParagraph2 />
       <AsSeenOnInstagram />
-      <Customer />
+      {/* <Customer /> */}
       <AlsoLike/>
     </div>
   );
