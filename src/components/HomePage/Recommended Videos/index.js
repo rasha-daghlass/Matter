@@ -54,9 +54,9 @@ const RecommendedVideos = () => {
           })}
         </Row>
         <Row>
-          <div className={styles.showMoreButton}>
+          {/* <div className={styles.showMoreButton}>
             <SharedButton buttonLabel={"Show More"} />
-          </div>
+          </div> */}
         </Row>
       </Container>
     </>
