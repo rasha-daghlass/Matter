@@ -19,7 +19,7 @@ const UserProfile = () => {
     }, []);
 
   return (
-    <div> welcome  {user.name}</div>
+    <div> Welcome  {user.name}</div>
   )
 }
 

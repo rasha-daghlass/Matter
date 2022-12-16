@@ -64,13 +64,13 @@ const LoginForm = () => {
         </button>
       </div>
       <div className={styles.formFiled}>
-      {/* {"token" in cookie ? <UserProfile/>:
+      {"token" in cookie ? <UserProfile/> :
       <button className={styles.LoginButton} onClick={handleLogin}>
           LOG IN
-        </button> } */}
-         <button className={styles.LoginButton} onClick={handleLogin}>
+        </button> }
+         {/* <button className={styles.LoginButton} onClick={handleLogin}>
           LOG IN
-        </button> 
+        </button>  */}
 
       </div>
     </div>
