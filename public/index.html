@@ -17,6 +17,7 @@
         width: 100vw;
         height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         background-color: rgb(177, 173, 173);
@@ -48,7 +49,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Matter</title>
-    >
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -56,10 +57,12 @@
     <div id="root">
       <div class="divLoader">
         <img class="svgLoader" src="./assets//images/matterLogo.png" width="100vw" >
+        <br><br><br>
         <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
         </div>
-  
+        <br><br><br>
+        <span>Loading</span>
+      
       </div>
     </div>
     <!--
