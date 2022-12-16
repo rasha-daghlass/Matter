@@ -10,6 +10,7 @@ import IconsSection from "./IconsSection";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import UserProfile from "../../../HomePage/USERPROFILE";
+import { NavDropdown } from "react-bootstrap";
 
 function LightNavBar() {
   const [cookie,setCookie]=useCookies({})
@@ -24,7 +25,11 @@ function LightNavBar() {
             <hr className={styles.navBarHr} />
             <MiddleSection />
             <Nav>
-            {"token" in cookie ? <UserProfile/>:<Link to="/Login" className={styles.loginLink}>
+            {"token" in cookie ?
+            <NavDropdown title={<UserProfile/>}>
+              <NavDropdown.Item>Log Out</NavDropdown.Item>
+            </NavDropdown> 
+             :<Link to="/Login" className={styles.loginLink}>
                 LOGIN
               </Link>
       }
