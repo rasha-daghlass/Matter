@@ -1,22 +1,23 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Cart from "./views/Cart";
+import CategoryList from "./views/CategoryList";
 import HomePage from "./views/HomePage";
 import LoginPage from "./views/LoginPage";
 import NotFound from "./views/NotFound";
-import ProductList from "./views/ProductList";
-import ProductPage from "./views/ProductPage";
+import ProductDetails from "./views/ProductDetails";
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout/>}>
+        <Route element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/Login" element={<LoginPage/>} />
-          <Route path="/ProductPage" element={<ProductPage/>} />
-          <Route path="ProductList" element={<ProductList/>}/>
-          <Route path="/Cart" element={<Cart/>} />
+          <Route path="/Login" element={<LoginPage />} />
+          <Route path=":category" element={<CategoryList />} />
+          {/* <Route path=":Product/pro" element={<ProductDetails />}>
+            <Route path=":Product"  />
+          </Route> */}
+          <Route path="/productpage" element={<ProductDetails />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

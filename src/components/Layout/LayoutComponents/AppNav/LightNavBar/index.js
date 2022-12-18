@@ -7,13 +7,19 @@ import Nav from "react-bootstrap/Nav";
 import MiddleSection from "./MiddleSection";
 import React from "react";
 import IconsSection from "./IconsSection";
-import { Link } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import UserProfile from "../../../HomePage/USERPROFILE";
-import { NavDropdown } from "react-bootstrap";
+import { Link} from "react-router-dom";
+import NavDropdown from "react-bootstrap/NavDropdown";
+
+import { useCookies } from 'react-cookie'
+import UserProfile from "../../../../HomePage/UserProfile";
 
 function LightNavBar() {
-  const [cookie,setCookie]=useCookies({})
+  const[cookie , setCookie , removeToken]=useCookies();
+  
+  const logOut=()=>{
+    localStorage.removeItem("token");
+    removeToken("token") ;}
+  
   return (
     <>
       <Navbar expand="lg" className={styles.LightNavBar}>
@@ -27,15 +33,12 @@ function LightNavBar() {
             <Nav>
             {"token" in cookie ?
             <NavDropdown title={<UserProfile/>}>
-              <NavDropdown.Item>Log Out</NavDropdown.Item>
+              <NavDropdown.Item onClick={logOut}>Log Out</NavDropdown.Item>
             </NavDropdown> 
              :<Link to="/Login" className={styles.loginLink}>
                 LOGIN
               </Link>
       }
-              {/* <Link to="/Login" className={styles.loginLink}>
-                LOGIN
-              </Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
